@@ -1,617 +1,534 @@
 .section-main {
+  padding-top: 9.8rem;
+
+  background: url("../images/content/section-main/bg-pc.jpg") center no-repeat;
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: black;
-  background-image: url("../images/content/main-section/bg-pc.jpg");
 
-  @media screen and (max-width: $mobile-screen) {
-    background-image: url("../images/content/main-section/bg-mb.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: black;
-  }
-
-  position: relative;
-
-  width: 100%;
-  height: auto;
-
-  min-height: 72rem;
-
-  @media screen and (max-width: $mobile-screen) {
-    min-height: 82rem;
-  }
+  min-height: 80rem;
 
   &__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding-top: 10rem;
-
-    @media screen and (max-width: $mobile-screen) {
-      flex-direction: column;
-      padding-top: 16rem;
-    }
+    margin: 6rem auto;
   }
 
-  &__wrapper {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-
-    transform: translateY(-50%);
-
-    @media screen and (max-width: $mobile-screen) {
-      position: static;
-
-      transform: translateY(0);
-    }
-  }
-
-  &__data {
-    width: 100%;
-    max-width: 56rem;
-  }
-
-  .main-block__text {
-    width: 100%;
-    max-width: 45rem;
-  }
-
-  //form
-
-  &__form {
-    width: 100%;
-    max-width: 40rem;
-
-    padding: 4rem;
-
-    @media screen and (max-width: $table-screen) {
-      max-width: 37rem;
-    }
-
-    @media screen and (max-width: $mobile-screen) {
-      max-width: none;
-      padding: 2rem;
-      width: auto;
-
-      @include margin(-2rem);
-    }
-
-    .form-text {
-      max-width: 23rem;
-
-      @media screen and (max-width: $mobile-screen) {
-        max-width: 27rem;
-      }
-    }
-  }
-}
-
-.main-block {
-  &__title {
-    font-size: 6.8rem;
-    font-weight: 700;
-
-    margin-bottom: 3rem;
-
-    color: white;
-
-    margin-top: 0;
-
-    @media screen and (max-width: $table-screen) {
-      font-size: 5.2rem;
-      margin-bottom: 2rem;
-    }
-  }
-
-  &__text {
+  &__uppertitle {
     font-size: 2rem;
     font-weight: 400;
 
     color: white;
-  }
-}
 
+    margin-bottom: 2rem;
 
-//GETFREE
-//________________________________________________________
+    padding: 1.7rem 3.1rem;
 
-.section-getFree {
-  padding: 9rem 0;
+    text-align: center;
 
-  background-color: #000;
+    background: rgba(255, 255, 255, 0.15);
 
-  position: relative;
-
-  @media screen and (max-width: $table-screen) {
-    padding-top: 5rem;
-  }
-
-  &:after {
-    content: "";
-
-    display: block;
-
-    position: absolute;
-    z-index: 10;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: auto;
-
-    transform: translateY(-100%);
-
-    background: linear-gradient(175.39deg, rgba(2, 1, 0, 0) -5.05%, #020100 85.33%);
-    height: 11.8rem;
-
-    @media screen and (max-width: $mobile-screen) {
-      height: 2rem;
-    }
-  }
-
-  &__inner {
-    display: flex;
-    align-items: stretch;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    @media screen and (max-width: $mobile-screen) {
-      flex-direction: column-reverse;
-    }
-  }
-
-  &__items {
     width: 100%;
-    max-width: 507 / 1160 * 100%;
+    max-width: max-content;
 
-    @media screen and (max-width: $mobile-screen) {
-      max-width: none;
-    }
-
-    .services-list {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      flex-direction: column;
-
-      height: 100%;
-
-      margin: 0;
-      padding: 0;
-
-      &__item {
-        &-wrapper {
-          @media screen and (max-width: $mobile-screen) {
-            margin-bottom: 3.5rem;
-          }
-
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
-        
-        &:hover .services-list__item-title{
-          color: $color-main;
-        }
-      }
-
-      &__item-title {
-        font-size: 2.5rem;
-        font-weight: 400;
-
-        color: white;
-
-        margin-bottom: 0.8rem;
-
-        transition: all 0.1s linear;
-
-        @media screen and (max-width: $table-screen) {
-          font-size: 2rem;
-        }
-
-        @media screen and (max-width: $mobile-screen) {
-          font-size: 2.2rem;
-        }
-      }
-
-      &__item-text {
-        font-size: 2rem;
-        font-weight: 500;
-
-        color: $text-grey;
-
-        margin: 0;
-        padding: 0;
-
-        @media screen and (max-width: $table-screen) {
-          font-size: 1.8rem;
-        }
-
-        @media screen and (max-width: $mobile-screen) {
-          font-size: 2rem;
-        }
-      }
-
-      &__item-icon {
-        width: 14.6rem;
-        height: 6.6rem;
-
-        margin: 0 5rem;
-
-        @media screen and (max-width: $table-screen) {
-          width: 10.6rem;
-          height: 6.6rem;
-
-          margin: 0 2rem;
-        }
-
-        @media screen and (max-width: $mobile-screen) {
-          width: 8.6rem;
-          height: 5.6rem;
-
-          margin-left: 0rem;
-        }
-      }
-    }
-  }
-
-  &__right {
-    width: 100%;
-    max-width: 55.89655%;
-
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-
-    @media screen and (max-width: $mobile-screen) {
-      max-width: none;
-      flex-direction: column-reverse;
-    }
+    @include margin(auto);
   }
 
   &__title {
+    font-weight: 700;
+    font-size: 4rem;
+
     color: white;
-
-    margin-top: 0;
-
-    margin-bottom: 9rem;
-
-    font-size: 5.2rem;
-    font-weight: 600;
 
     text-align: right;
 
+    margin-right: 3rem;
+
+    max-width: 101rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    text-transform: uppercase;
+
     @media screen and (max-width: $table-screen) {
-      font-size: 4rem;
+      font-size: 3.1rem;
     }
 
     @media screen and (max-width: $mobile-screen) {
-      text-align: left;
+      text-align: center;
 
-      margin-bottom: 5rem;
-      margin-top: 5rem;
+      margin-right: 0;
+
+      max-width: none;
+    }
+
+    source, img {
+      margin-left: 1rem;
+
+      width: 100%;
+      max-width: 10rem;
+
+      height: auto;
+
+      @media screen and (max-width: $mobile-screen) {
+        display: none;
+      }
     }
   }
 
-  &__img {
-    width: 100%;
-    height: auto;
+  &__lowertitle {
+    font-size: 2rem;
+    font-weight: 700;
+
+    margin-top: 2rem;
+
+    text-align: center;
+
+    color: white;
+  }
+
+  &__subtitle {
+    margin-top: 7rem;
+    margin-bottom: 3rem;
+
+    font-weight: 700;
+    font-size: 2.4rem;
+
+    text-transform: uppercase;
+    text-align: center;
+
+    color: white;
+
+    @media screen and (max-width: $table-screen) {
+      font-size: 1.8rem;
+    }
+
+    @media screen and (max-width: $mobile-screen) {
+      margin-top: 3rem;
+    }
+  }
+
+  &__form {
+    max-width: 62.5rem;
+
+    @include margin(auto);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and (max-width: $mobile-screen) {
+      flex-direction: column;
+    }
+
+    &-tel {
+      margin-right: 1.2rem;
+
+      width: 100%;
+      max-width: 36.7rem;
+    }
+
+    &-submit {
+      @media screen and (max-width: $mobile-screen) {
+        max-width: 36.7rem;
+        width: 100%;
+
+        margin-top: 2rem;
+
+        .input-submit {
+          width: 100%;
+        }
+      }
+
+    }
   }
 }
 
-//WHOWORK
-//_________________________________
+//SERVICES
 
-.section-whoWork {
-  padding: 9rem 0;
+.section-services {
 
-  @media screen and (max-width: $table-screen) {
-    padding: 5rem 0;
+  &__bigtitle {
+    font-size: 4rem;
+    font-weight: 700;
+
+    margin-bottom: 2rem;
+    margin-top: 0;
+
+    text-align: center;
+
+    color: rgba(33, 128, 149, 1);
+
+    text-transform: uppercase;
+    
+    @media screen and (max-width: $mobile-screen) {
+      font-size: 3rem;
+    }
   }
 
-  &__title {
-    font-size: 5.2rem;
-    font-weight: 600;
+  &__subtitle {
+    font-size: 1.8rem;
+    font-weight: 400;
 
     margin-top: 0;
     margin-bottom: 4rem;
 
     text-align: center;
 
-    @media screen and (max-width: $table-screen) {
-      font-size: 4rem;
-      margin-bottom: 2rem;
-    }
+    max-width: 105rem;
 
+    @include margin(auto);
+    
     @media screen and (max-width: $mobile-screen) {
-      margin-bottom: 4rem;
+      font-size: 1.7rem;
     }
   }
 
   &__data {
     display: flex;
     align-items: stretch;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     flex-wrap: wrap;
 
-    @include margin(-4rem);
-    margin-top: -4rem;
-
-    @media screen and (max-width: $table-screen) {
-      margin-top: -2rem;
-      @include margin(-2rem);
-    }
-
-    @media screen and (max-width: $mobile-screen) {
-      flex-direction: column;
-      margin-top: -3rem;
-      @include margin(-3rem);
-    }
+    @include margin(-1.5rem)
   }
 
-  &__step {
-    width: auto;
-    max-width: 50%;
+  &__cart {
+    width: 100%;
+    max-width: 25%;
 
-    padding: 4rem;
+    padding: 1.5rem;
 
     @media screen and (max-width: $table-screen) {
-      padding: 2rem;
+      max-width: 50%;
     }
 
     @media screen and (max-width: $mobile-screen) {
-      max-width: none;
-      padding: 3rem;
-    }
-
-    &:last-child{
-
-      @media screen and (max-width: $mobile-screen) {
-        padding-bottom: 0;
-      }
+      max-width: 100%;
     }
 
     &-inner {
-      width: 100%;
-      max-width: 47.7rem;
+      background-color: rgba(242, 247, 255, 1);
+
+      border-radius: 1.2rem;
 
       height: 100%;
 
-      margin: 0 auto;
+      padding: 2rem;
 
       display: flex;
       align-items: stretch;
       justify-content: space-between;
       flex-direction: column;
-    }
 
-    &-img {
-      margin: 0 auto;
-
-      height: 32rem;
-      width: auto;
-
-      display: block;
-
-      @media screen and (max-width: $table-screen) {
-        height: 24rem;
+      @media screen and (max-width: $mobile-screen) {
+        padding: 3rem;
       }
-    }
-
-    &-row {
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-start;
-
-      margin-top: 1.5rem;
-      margin-bottom: 1.5rem;
     }
 
     &-title {
-      text-align: left;
-
-      font-weight: 800;
-      font-size: 3.4rem;
-
-      padding-left: 2rem;
-      margin-bottom: 1rem;
-
-      @media screen and (max-width: $table-screen) {
-        font-size: 2.4rem;
-      }
-
-      @media screen and (max-width: $mobile-screen) {
-        font-size: 2.8rem;
-      }
-    }
-
-    &-number {
-      font-weight: 600;
-      font-size: 7.2rem;
-
-      color: #D4D5D7;
-
-      @media screen and (max-width: $table-screen) {
-        font-size: 6.2rem;
-      }
-    }
-
-    &-text {
       font-size: 2rem;
-      font-weight: 400;
+      font-weight: 700;
 
-      color: black;
+      text-align: center;
+
+      color: rgba(33, 128, 149, 1);
 
       margin-bottom: 1.5rem;
 
-      @media screen and (max-width: $table-screen) {
-        font-size: 1.8rem;
-      }
-
       @media screen and (max-width: $mobile-screen) {
-        font-size: 2rem;
-        margin-bottom: 3rem;
+        font-size: 2.3rem;
       }
     }
 
-    &-btn {
-      padding: 1.5rem 3.2rem;
-
-      margin: 0 auto;
-
-      color: #262C35;
-
-      font-size: 1.6rem;
-      font-weight: 400;
-
+    &-img {
+      @include margin(-2rem);
+      margin-bottom: 2rem;
 
       @media screen and (max-width: $mobile-screen) {
-        padding: 1.9rem 3.7rem;
-        font-size: 1.9rem;
+        @include margin(-3rem);
+      }
+
+      source, img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &-more {
+      padding: 1.7rem 7rem;
+
+      border-radius: 1.2rem;
+
+      background-color: rgba(30, 175, 207, 1);
+
+      color: white;
+
+      margin-bottom: 1.6rem;
+
+      transition: all 0.2s linear;
+      cursor: pointer;
+
+      text-align: center;
+
+      font-size: 1.8rem;
+      font-weight: 700;
+
+      &:hover {
+        background-color: #175868;
+      }
+    }
+
+    &-order {
+      padding: 1.7rem 1rem;
+
+      border-radius: 1.2rem;
+
+      border: 2px solid #218095;
+
+      text-align: center;
+      color: #218095;
+
+      cursor: pointer;
+
+      transition: all 0.2s linear;
+
+      font-size: 1.8rem;
+      font-weight: 700;
+
+      &:hover {
+        background: #218095;
+        color: white;
       }
     }
   }
 }
 
 
-//letter
-//_________________________________
+//SERVICES ADDITIONAL
 
-.section-letter{
-  padding: 9rem 0;
-
-  @media screen and (max-width: $table-screen) {
-    padding: 5rem 0;
-  }
+.section-services-additional {
 
   &__title {
-    font-size: 5.2rem;
-    font-weight: 600;
+    color: $color-main-2;
 
-    margin-top: 0;
-    margin-bottom: 4rem;
+    font-size: 2.4rem;
+    font-weight: 700;
 
-    text-align: center;
+    text-transform: uppercase;
 
-    @media screen and (max-width: $table-screen) {
-      font-size: 4rem;
-      margin-bottom: 2rem;
-    }
+    background: #fff;
 
-    @media screen and (max-width: $mobile-screen) {
-      margin-bottom: 4rem;
-    }
+    padding-right: 3rem;
+
+    position: relative;
+    z-index: 10;
+
+    margin-top: 4rem;
+
+    max-width: max-content;
   }
 
-  &__slider-wrapper{
+  &__title-wrapper{
+    position: relative;
+  }
+
+  &__title-line{
+    height: 0.2rem;
+    width: 100%;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    transform: translateY(-50%);
+
+    border-top: 2px dotted $color-main;
+  }
+
+  &__data {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    @include margin(-1rem);
+  }
+
+  &__item {
+    width: 100%;
+    max-width: 33.33333%;
+
+    padding: 1rem;
+    
+    @media screen and (max-width: $table-screen) {
+        max-width: 50%;
+    }
+    
+    @media screen and (max-width: $mobile-screen) {
+        max-width: none;
+    }
+
+    &-inner{
+      width: 100%;
+      height: 100%;
+
+      background: #fff;
+
+      border-radius: 1.2rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      padding: 3rem 0 3rem 2rem;
+
+      box-shadow: 0px 0px 10px rgba(4, 90, 108, 0.5);
+    }
+
+    &-title{
+      font-size: 2rem;
+      font-weight: 700;
+
+      color: rgba(30, 175, 207, 1);
+
+      margin-bottom: 1rem;
+
+      background: #fff;
+    }
+
+    &-left{
+      width: 100%;
+      max-width: 6.5rem;
+    }
+    .icon{
+      width: 6rem;
+      height: 6rem;
+
+      margin-right: 2rem;
+    }
+
+    &-subtitle{
+      font-size: 2rem;
+      font-weight: 400;
+
+      color: rgba(35, 35, 35, 1);
+    }
+  }
+}
+
+
+//SERVICES MORE
+
+.section-services-more{
+
+  &__title {
+    color: $color-main-2;
+
+    font-size: 2.4rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    background: #fff;
+
+    padding-right: 3rem;
+
+    position: relative;
+    z-index: 10;
+
+    max-width: max-content;
+  }
+
+  &__title-wrapper{
     position: relative;
 
-    &:after,
-    &:before{
-      content: "";
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-      display: block;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      z-index: 10;
 
-      width: 24rem;
-      @media screen and (max-width: $table-screen) {
-        width: 8rem;
+    margin-top: 6rem;
+  }
+
+  &__title-line{
+    height: 0.2rem;
+    width: 100%;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    transform: translateY(-50%);
+
+    border-top: 2px dotted $color-main;
+  }
+
+  &__arrow-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #fff;
+
+    position: relative;
+    z-index: 10;
+
+    padding-left: 2rem;
+  }
+
+  &__arrow{
+    width: 5rem;
+    height: 5rem;
+
+    border-radius: 1.2rem;
+
+    margin: 0 0.7rem;
+
+    background: #fff;
+
+    box-shadow: 0px 4px 4px rgba(4, 90, 108, 0.5);
+
+    border: 2px solid #218095;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: all 0.2s linear;
+
+    &:hover{
+      background: #218095;
+      box-shadow: 0px 4px 4px rgba(4, 90, 108, 0);
+
+      .icon{
+        fill: white;
       }
     }
 
-    &:after{
-      left: auto;
-      right: 0;
+    .icon{
+      width: 1rem;
+      height: 2rem;
 
-      background: linear-gradient(270deg, #FEFDFC 0%, rgba(255, 255, 255, 0) 100%);
-    }
+      fill: #218095;
 
-    &:before{
-      left: 0;
-      right: auto;
-
-      background: linear-gradient(270deg, #FEFDFC 0%, rgba(255, 255, 255, 0) 100%);
-      transform: scale(-1, 1);
+      transition: all 0.2s linear;
     }
   }
 
   &__slide{
-    padding: 0 1rem;
-
-    @media screen and (max-width: $mobile-screen) {
-      padding: 2rem 1rem;
-    }
-
-    transition: all 0.2s ease-in-out;
-    
-    &.slick-active{
-      @media screen and (max-width: $mobile-screen) {
-          transform: scale(1.05);
-      }      
-    }
 
     &-img{
-      display: block;
-      font-size: 0;
 
-      width: 100%;
-      height: auto;
-    }
-  }
-}
-
-//HELPYOT
-//_________________________________
-
-.section-helpYou{
-  background: black url('../images/content/section-helpYou/bg.jpg') center no-repeat;
-  background-size: cover;
-
-  padding: 9rem 0;
-
-  @media screen and (max-width: $table-screen) {
-    padding: 5rem 0;
-  }
-
-  &__title {
-    color: white;
-
-    margin-top: 0;
-
-    margin-bottom: 4rem;
-
-    font-size: 5.2rem;
-    font-weight: 600;
-
-    text-align: center;
-
-    @media screen and (max-width: $table-screen) {
-      font-size: 4rem;
-    }
-
-    @media screen and (max-width: $mobile-screen) {
-      margin-bottom: 4rem;
+      source, img{
+        width: 100%;
+        height: auto;
+      }
     }
   }
 
-  &__form{
-    width: 100%;
-    max-width: 68rem;
-
-    margin: 0 auto;
-
-    text-align: center;
-
-    @media screen and (max-width: $mobile-screen) {
-      padding: 2rem;
-    }
-  }
 }

@@ -2,161 +2,70 @@ extends base/_layout
 block head
     title Главная
 block page
-    section(id='first-section').section-main(style="background-image:url(images/content/main-section/bg-pc.jpg)")
+    section.section-main(id='first-section')
         .section-main__wrapper
             .container
                 .section-main__inner
-                    .section-main__data
-                        .main-block
-                            .main-block__content
-                                h1.main-block__title Вы экспортер? Вы МСП?
-                                p.main-block__text Оставьте заявку и получите бесплатные услуги от команды LILWID
-                    .section-main__form.form-block
-                        form.section-main__form-inner
-                            .form-block__header
-                                .section-main__form-title
-                                    +formTitle({text: 'Оставьте заявку'})
-                                .section-main__form-text
-                                    +formText({text: 'и получите <span class="text-active">бесплатные услуги</span> от команды <span class="text-medium">Likwid</span>'})
-                            .form-block__body
-                                .form-block__row
-                                    .form-block__col
-                                        +input-name({placeholder: 'Как вас зовут?'})
-                                    .form-block__col
-                                        +input-email({placeholder: 'Ваш Email'})
-                                .form-block__row
-                                    +input-area()
-                            .form-block__footer
-                                .section-main__form-submit
-                                    +input-submit({value: 'Оставить заявку'})
-                                .section-main__form-police
-                                    +formPolice({text: '*Нажимая на кнопку \"Оставить заявку\", <br> вы соглашаетесь с <a href="police.html" class="text-link">политикой конфиденциальности</a>'})
-    section.section-getFree
+                    .section-main__uppertitle Для тех кто хочет проводить время с близкими, а не за уборкой
+                    h1.section-main__title Качественная уборка квартир, домов и офисов  за  3 часа  от 100 тенге/м2
+                       +setImg({
+                           webp: 'images/content/section-main/0.webp',
+                           mWebp: 'images/content/section-main/0.webp',
+                           img: 'images/content/section-main/0.jpg',
+                           mImg: 'images/content/section-main/0.jpg'
+                       })
+                    .section-main__lowertitle наши провереные опытом специалисты используют только экологические материалы
+                    .section-main__subtitle оставьте заявку на расчет стоимости вашей уборки
+                    form.section-main__form
+                        .section-main__form-tel
+                            +input-tel({})
+                        .section-main__form-submit
+                            +input-submit({value: 'Узнать стоимость'})
+    section.section-services
         .container
-            .section-getFree__inner
-                //left
-                .services-list__wrapper.section-getFree__items
-                    ul.services-list
-                        +servicesItems({
-                            title: 'Поиск клиентов на международном рынке',
-                            icon: 'services-clients',
-                            link: 'search_clients.html',
-                            text: 'и получите бесплатные услуги от команды Likwid'
-                        })
-                        +servicesItems({
-                            title: 'Создание маркетинговых материалов',
-                            icon: 'services-create',
-                            link: 'search_clients.html',
-                            text: 'и получите бесплатные услуги от команды Likwid'
-                        })
-                        +servicesItems({
-                            title: 'Создание сайта',
-                            icon: 'services-site',
-                            link: 'free_site.html',
-                            text: 'и получите бесплатные услуги от команды Likwid'
-                        })
-                        +servicesItems({
-                            title: 'Перевод на новые языки',
-                            icon: 'services-translate',
-                            link: 'translate.html',
-                            text: 'и получите бесплатные услуги от команды Likwid'
-                        })
-                //right
-                .section-getFree__right
-                    h2.section-getFree__title Что вы получите бесплатно?
-                    img(src='images/content/section-getFree/0.jpg').section-getFree__img
-    section.section-whoWork
+            .section-services__inner
+                h2.section-services__bigtitle Виды услуг которые мы оказываем
+                .section-services__subtitle Наш сотрудник приезжает к вам в согласованное время с полным комплектом профессиональных средств и техники, после чего приступает к уборке. В конце уборки вам остается только оценить результат нашей работы
+                .section-services__data
+                    +servicesCart({src: '0', title: 'ПОДДЕРЖИВАЮЩАЯ УБОРКА', popup: 'popup-services-0'})
+                    +servicesCart({src: '1', title: 'ГЕНЕРАЛЬНАЯ УБОРКА', popup: 'popup-services-1'})
+                    +servicesCart({src: '2', title: 'ПОСТСРОИТЕЛЬНАЯ УБОРКА', popup: 'popup-services-2'})
+                    +servicesCart({src: '3', title: 'ЭКО-УБОРКА ', popup: 'popup-services-3'})
+    section.section-services-additional
         .container
-            .section-whoWork__inner
-                h2.section-whoWork__title Как работает?
-                .section-whoWork__data
-                    +whoWorkStep({
-                        img: 'images/content/section-whoWork/0.jpg',
-                        title: 'Заполните заявку',
-                        text: 'Кстати, диаграммы связей представляют собой не что иное, как квинтэссенцию мы связей представляют собой не что иное, как квинтэссенцию мы связей представляют собой не что иное, как квинтэссенцию',
-                        number: '1.'
-                    })
-                    +whoWorkStep({
-                        img: 'images/content/section-whoWork/1.jpg',
-                        title: 'Анализ потребностей с менеджером',
-                        text: 'Кстати, диаграммы связей представляют собой не что иное, как квинтэссенцию ',
-                        number: '2.'
-                    })
-                    +whoWorkStep({
-                        img: 'images/content/section-whoWork/2.jpg',
-                        title: 'Получении субсидии',
-                        text: 'Кстати, диаграммы связей представляют собой не что иное, как квинтэссенцию ',
-                        number: '3.'
-                    })
-                    +whoWorkStep({
-                        img: 'images/content/section-whoWork/3.jpg',
-                        title: 'Оказание услуг',
-                        text: 'Кстати, диаграммы связей представляют собой не что иное, как квинтэссенцию ',
-                        number: '4.'
-                    })
-    section.section-letter
-        .section-letter__inner
-            h2.section-letter__title Письма
-            .section-letter__slider-wrapper
-                .slider-arrow
-                    button.slider-arrow__prev.section-letter__slider-prev
-                        +setSvg({name: 'arrow-left'})
-                    button.slider-arrow__next.section-letter__slider-next
-                        +setSvg({name: 'arrow-right'})
-                .section-letter__slider.letter-slider
-                    +letterSlide({
-                        img: 'images/content/section-letter/0.jpg',
-                        bigimg: 'images/content/section-letter/0.jpg',
-                        id: 'id-1'
-                    })
-                    +letterSlide({
-                        img: 'images/content/section-letter/1.jpg',
-                        bigimg: 'images/content/section-letter/1.jpg',
-                        id: 'id-2'
-                    })
-                    +letterSlide({
-                        img: 'images/content/section-letter/2.jpg',
-                        bigimg: 'images/content/section-letter/2.jpg',
-                        id: 'id-3'
-                    })
-                    +letterSlide({
-                        img: 'images/content/section-letter/3.jpg',
-                        bigimg: 'images/content/section-letter/3.jpg',
-                        id: 'id-4'
-                    })
-                    +letterSlide({
-                        img: 'images/content/section-letter/4.jpg',
-                        bigimg: 'images/content/section-letter/4.jpg',
-                        id: 'id-5'
-                    })
-                    +letterSlide({
-                        img: 'images/content/section-letter/5.jpg',
-                        bigimg: 'images/content/section-letter/4.jpg',
-                        id: 'id-6'
-                    })
-
-
-    section.section-helpYou
+            .section-services-additional__inner
+                .section-services-additional__title-wrapper
+                    h3.section-services-additional__title ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ:
+                    .section-services-additional__title-line
+                .section-services-additional__data
+                    +servicesItem({icon: 'services-0', title: 'Мытьё окон ', subtitle: 'от ХХХ тг.'})
+                    +servicesItem({icon: 'services-1', title: 'Мытьё холодильника ', subtitle: 'от ХХХ тг.'})
+                    +servicesItem({icon: 'services-2', title: 'Мытьё балкона ', subtitle: 'от ХХХ тг.'})
+                    +servicesItem({icon: 'services-3', title: 'Химчистка ', subtitle: 'от ХХХ тг.'})
+                    +servicesItem({icon: 'services-4', title: 'Химчистка ', subtitle: 'от ХХХ тг.'})
+                    +servicesItem({icon: 'services-5', title: 'Дезинфекция', subtitle: 'от ХХХ тг.'})
+    section.section-services-more
         .container
-            .section-helpYou__inner
-                h2.section-helpYou__title Мы поможем вашему бизнесу
-                form.section-helpYou__form.form-block.form-submit
-                    .form-block__header
-                        .section-helpYou__form-title
-                            +formTitle({text: 'Оставьте заявку'})
-                        .section-helpYou__form-text
-                            +formText({text: 'и получите <span class="text-active">бесплатные услуги</span> от команды <span class="text-medium">Likwid</span>'})
-                    .form-block__body
-                        .form-block__row
-                            .form-block__col
-                                +input-name({placeholder: 'Как вас зовут?'})
-                            .form-block__col
-                                +input-email({placeholder: 'Ваш Email'})
-                        .form-block__row
-                            +input-area()
-                    .section-helpYou__form-footer
-                        .section-helpYou__form-submit
-                            +input-submit({value: 'Оставить заявку'})
-                        .section-helpYou__form-police
-                            +formPolice({text: '*Нажимая на кнопку \"Оставить заявку\", вы соглашаетесь с <a href="police.html" class="text-link">политикой конфиденциальности</a>'})
+            .section-services-more__inner
+                .section-services-more__title-wrapper
+                    h3.section-services-more__title ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ:
+                    .section-services-more__title-line
+                    .section-services-more__arrow-wrapper
+                        button.section-services-more__arrow.arrow-prev
+                            +setSvg({name: 'arrow-right'})
+                        button.section-services-more__arrow.arrow-next
+                            +setSvg({name: 'arrow-left'})
+        .section-services-more__slider
+            +servicesSlide({
+                webp: 'images/content/section-services-more/0-pc.webp',
+                mWebp: 'images/content/section-services-more/0-mb.webp',
+                img: 'images/content/section-services-more/0-pc.jpg',
+                mImg: 'images/content/section-services-more/0-mb.jpg'
+            })
+            +servicesSlide({
+                webp: 'images/content/section-services-more/1-pc.webp',
+                mWebp: 'images/content/section-services-more/1-mb.webp',
+                img: 'images/content/section-services-more/1-pc.jpg',
+                mImg: 'images/content/section-services-more/1-mb.jpg'
+            })
     include sections/popup

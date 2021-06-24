@@ -8,18 +8,18 @@ $grid-width: 1170px;
 $grid-gutter: 30px;
 $grid-columns: 12;
 
-$container-w: 116rem;
+$container-w: 117rem;
 $cp: 5rem;
 
 //colors
-$color-main: #fa935c;
-$color-main-2: #43abf0;
+$color-main: #218095;
+$color-main-2: rgba(33, 128, 149, 1);
 $text-color: #2a2b30;
 $text-grey:#979797;
 $dark: #272733;
 $base-color: $text-color;
 $base-bg: #fff;
-$header-bg: #10101d;
+$header-bg: rgba(30, 175, 207, 0.49);
 $dark-blue: #286690;
 
 $footer-bg: #000;
@@ -34,7 +34,7 @@ $input-bg: #dfdfe1;
 $input-file-bg: #f4f4f5;
 
 
-$ff-lato: 'Poppins', sans-serif;
+$ff-lato: 'Open Sans', sans-serif;
 $font-default: $ff-lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
 
 

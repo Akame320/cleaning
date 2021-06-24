@@ -9,56 +9,13 @@ $(function () {
         $(this).toggleClass('active')
     })
 
-    function indexSlick(){
-        $('.section-letter__slider.letter-slider').slick({
-            slidesToShow: 6,
-            slidesToScroll: 3,
-            infinite: true,
-            prevArrow: $('button.slider-arrow__prev.section-letter__slider-prev'),
-            nextArrow: $('button.slider-arrow__next.section-letter__slider-next'),
-            autoplay: true,
-            autoplaySpeed: 2000,
-            responsive: [
-                {
-                    breakpoint: 1700,
-                    settings: {
-                        slidesToShow: 5,
-                        slidesToScroll: 5,
-                    }
-                },
-                {
-                    breakpoint: 1300,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 767,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        centerMode: true
-                    }
-                }
-            ]
-        })
-    }
 
-    indexSlick();
-
-    $('.section-best-clients__body').slick({
-        centerMode: true,
+    $('.section-services-more__slider').slick({
         slidesToScroll: 1,
         slidesToShow: 1,
         adaptiveHeight: false,
-        centerPadding: "18rem",
-        autoplay: true,
-        autoplaySpeed: 2000,
-        dots: true,
-        appendDots: $('.section-best-clients__dots'),
-        prevArrow: $('button.section-best-clients__arrow-prev'),
-        nextArrow: $('button.section-best-clients__arrow-next'),
+        prevArrow: $('button.section-services-more__arrow.arrow-prev'),
+        nextArrow: $('button.section-services-more__arrow.arrow-next'),
         responsive: [
             {
                 breakpoint: 1023,
@@ -75,58 +32,6 @@ $(function () {
         ]
     })
 
-    $('.section-reviews__slider.reviews-slider').slick({
-        slidesToScroll: 3,
-        slidesToShow: 3,
-        prevArrow: $('button.section-reviews__arrow-prev'),
-        nextArrow: $('button.section-reviews__arrow-next'),
-        autoplay: true,
-        autoplaySpeed: 2000,
-        responsive: [
-            {
-                breakpoint: 1023,
-                settings: {
-                    slidesToScroll: 2,
-                    slidesToShow: 2,
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToScroll: 1,
-                    slidesToShow: 1,
-                }
-            }
-        ]
-    })
-
-
-
-    $('.section-site-portfolio__slider.site-slider').slick({
-        slidesToScroll: 1,
-        slidesToShow: 1,
-        centerPadding: "50rem",
-        autoplay: true,
-        autoplaySpeed: 2000,
-        centerMode: true,
-        arrows: false,
-        responsive: [
-            {
-                breakpoint: 1023,
-                settings: {
-                    slidesToScroll: 1,
-                    slidesToShow: 1,
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToScroll: 1,
-                    slidesToShow: 1,
-                }
-            }
-        ]
-    })
 
     $('[data-href]').on('click', function (event) {
         event.preventDefault()
@@ -135,23 +40,21 @@ $(function () {
         $('html').animate({scrollTop: positionElemY - 150}, 1100);
     })
 
-    $('[data-fancybox]:not(.slick-cloned)').fancybox();
-    $('[data-fancybox="gallery"]').fancybox({
-        afterClose: function(){
-            indexSlick();
-        }
+    $('[data-popup]').on('click', function (){
+       let str = $(this).attr('data-popup');
+
+       console.log(str)
+
+       $(`#${str}`).addClass('active');
     });
 
-    $('.section-best-clients__body').on('afterChange', function () {
-        $('.section-best-clients__body').slick('setPosition')
-    })
 
     $('.popup-close').on('click', function () {
         $('.popup').removeClass('active');
     });
 
-    $('.popup-open').on('click', function () {
-        $('.popup').addClass('active');
+    $('.open-popup-form').on('click', function () {
+        $('.popup-open-form').addClass('active');
     });
 
     // if($(window))

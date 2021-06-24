@@ -1,6 +1,6 @@
 //Формы
 mixin input-tel(object)
-    input.input-text(type='text' name='tel' required=object.required ? true: false placeholder = object.placeholder ? object.placeholder: 'Ваш телефон')
+    input.input-text(type='text' name='tel' required=object.required ? true: false placeholder = object.placeholder ? object.placeholder: 'Телефон*(вводится без 8)')
 
 mixin input-name(object)
     input.input-text(type='text' name='name' required=object.required ? true: false placeholder = object.placeholder ? object.placeholder: 'Ваше имя')
@@ -40,66 +40,36 @@ mixin formPolice(object)
 
 
 
-mixin servicesItems(object)
-    .services-list__item-wrapper
-        a(href=object.link).services-list__item
-            .services-list__item-icon
+mixin servicesCart(object)
+    .section-services__cart
+        .section-services__cart-inner
+            .section-services__cart-title !{object.title}
+            .section-services__cart-body
+                .section-services__cart-img
+                    +setImg({
+                        webp: 'images/content/section-services/' + object.src +  '.webp',
+                        mWebp: 'images/content/section-services/' + object.src + '.webp',
+                        img: 'images/content/section-services/'+object.src+'.jpg',
+                        mImg: 'images/content/section-services/'+object.src+'.jpg'
+                    })
+                div(data-popup=object.popup).section-services__cart-more Подробнее
+                .section-services__cart-order.open-popup-form Узнать стоимость
+
+mixin servicesItem(object)
+    .section-services-additional__item
+        .section-services-additional__item-inner
+            .section-services-additional__item-left
                 +setSvg({name: object.icon})
-            .services-list__item-data
-                .services-list__item-title !{object.title}
-                p.services-list__item-text !{object.text}
-
-
-mixin whoWorkStep(object)
-    .section-whoWork__step
-        .section-whoWork__step-inner
-            .section-whoWork__step-header
-                img(src=object.img).section-whoWork__step-img
-                .section-whoWork__step-row
-                    .section-whoWork__step-number !{object.number}
-                    .section-whoWork__step-title !{object.title}
-                p.section-whoWork__step-text !{object.text}
-            .section-whoWork__step-body
-                button.section-whoWork__step-btn.btn.btn-simple.popup-open Оставить заявку
-
-
-mixin letterSlide(object)
-    .section-letter__slide
-        a(href=object.bigimg data-fancybox='gallery' data-caption="My caption" data-type="image").section-letter__slide-inner
-            img(src=object.img).section-letter__slide-img
-
-mixin footerSocial(object)
-    li.footer__social-item
-        a(href=object.link).footer__social-link
-            +setSvg({name: object.icon})
-
-mixin socialItem(object)
-    .block-socials__item
-        .block-socials__item-inner
-            img(src=object.src).block-socials__icon
-
-
-mixin reviewsSlide(object)
-    .section-reviews__slide
-        .section-reviews__slide-inner
-            .section-reviews__slide-header
-                .section-reviews__slide-avatar
-                    img(src=object.src).icon
-                .section-reviews__slide-header-data
-                    .section-reviews__slide-name !{object.name}
-                    .section-reviews__slide-city !{object.city}
-            .section-reviews__slide-body
-                .section-reviews__slide-text !{object.text}
-
-mixin technologistItem(object)
-    li.section-technologist__item
-        .section-technologist__item-inner
-            .section-technologist__item-icon
-                img(src=object.src).icon
-            .section-technologist__item-text !{object.text}
-
-
-mixin portfolioSiteSlide(object)
-    .section-site-portfolio__slide
-        a(href=object.link).section-site-portfolio__slide-inner
-            img(src=object.src).section-site-portfolio__slide-img
+            .section-services-additional__item-right
+                .section-services-additional__item-title !{object.title}
+                .section-services-additional__item-subtitle !{object.subtitle}
+mixin servicesSlide(object)
+    .section-services-more__slide
+        .section-services-more__sldie-inner
+            .section-services-more__slide-img
+                +setImg({
+                    webp: object.webp,
+                    mWebp: object.mWebp,
+                    img: object.img,
+                    mImg: object.mImg
+                })
