@@ -73,3 +73,119 @@ mixin servicesSlide(object)
                     img: object.img,
                     mImg: object.mImg
                 })
+
+mixin calcaulateType(object)
+    .section-calculate__type-item
+        .section-calculate__type-item-inner
+            input(type='radio' id=object.id name='type').section-calculate__type-radio
+            label(for=object.id).section-calculate__type-label
+                .section-calculate__type-img
+                    +setImg({
+                        webp: 'images/content/section-calculate/' + object.img + '-pc.webp',
+                        mWebp: 'images/content/section-calculate/' + object.img + '-pc.webp',
+                        img: 'images/content/section-calculate/' + object.img + '-pc.jpg',
+                        mImg: 'images/content/section-calculate/' + object.img + '-pc.jpg'
+                    })
+                .section-calculate__type-title !{object.title}
+
+mixin calculateRooms(object)
+    .section-calculate__rooms-item
+        .section-calculate__rooms-item-inner
+            input(id=object.id type='radio' name='rooms').section-calculate__rooms-radio
+            label(for=object.id).section-calculate__rooms-label
+                .section-calculate__rooms-number !{object.number}
+
+mixin calcualteCheckbox(object)
+    .section-calculate__service-item
+        .section-calculate__service-item-inner
+            input(type='checkbox' name=object.title id=object.id ).section-calculate__service-checkbox
+            label(for=object.id).section-calculate__service-label
+                .section-calculate__service-icon
+                    +setSvg({name: 'check'})
+                span !{object.title}
+
+mixin reviewsSlide(object)
+    .section-reviews__slide
+        .section-reviews__slide-inner
+            .section-reviews__slide-img
+                +setImg({
+                    webp: 'images/content/section-reviews/' + object.img + '.webp',
+                    mWebp: 'images/content/section-reviews/' + object.img + '.webp',
+                    img: 'images/content/section-reviews/' + object.img + '.png',
+                    mImg: 'images/content/section-reviews/' + object.img + '.png'
+                })
+
+mixin teamItem(object)
+    .section-team__item
+        .section-team__item-inner
+            .section-team__item-img
+                +setImg({
+                    webp: 'images/content/section-team/' + object.img + '.webp',
+                    mWebp: 'images/content/section-team/' + object.img + '.webp',
+                    img: 'images/content/section-team/' + object.img + '.jpg',
+                    mImg: 'images/content/section-team/' + object.img + '.jpg'
+                })
+            .section-team__item-title !{object.title}
+            .section-team__item-subtitle !{object.subtitle}
+
+mixin guaranteeItem(object)
+    .section-guarantee__item
+        .section-guarantee__item-inner
+            .section-guarantee__item-icon
+                +setSvg({name: object.icon})
+            .section-guarantee__item-title !{object.title}
+            .section-guarantee__item-text !{object.text}
+
+mixin equipmentItem(object)
+    .section-equipment__item
+        .section-equipment__item-inner
+            .section-equipment__item-img
+                +setImg({
+                    webp: 'images/content/section-equipment/' + object.img + '.webp',
+                    mWebp: 'images/content/section-equipment/' + object.img + '.webp',
+                    img: 'images/content/section-equipment/' + object.img + '.png',
+                    mImg: 'images/content/section-equipment/' + object.img + '.png'
+                })
+            .section-equipment__item-name !{object.name}
+            .section-equipment__item-from
+                .section-equipment__item-from-img
+                    +setImg({
+                        webp: 'images/content/section-equipment/' + object.fromImg + '.webp',
+                        mWebp: 'images/content/section-equipment/' + object.fromImg + '.webp',
+                        img: 'images/content/section-equipment/' + object.fromImg + '.jpg',
+                        mImg: 'images/content/section-equipment/' + object.fromImg + '.jpg'
+                    })
+                .section-equipment__item-from-text !{object.fromText}
+
+mixin partnersItem(object)
+    .section-partners__item
+        .section-partners__item-inner
+            .section-partners__item-img
+                +setImg({
+                    webp: 'images/content/section-partners/' + object.img + '.webp',
+                    mWebp: 'images/content/section-partners/' + object.img + '.webp',
+                    img: 'images/content/section-partners/' + object.img + '.png',
+                    mImg: 'images/content/section-partners/' + object.img + '.png'
+                })
+
+mixin portfolioSlide(object)
+    .section-portfolio__slide
+        .section-portfolio__slide-inner
+            .section-portfolio__slide-img
+                +setImg({
+                    webp: 'images/content/section-portfolio/' + object.img + '.webp',
+                    mWebp: 'images/content/section-portfolio/' + object.img + '.webp',
+                    img: 'images/content/section-portfolio/' + object.img + '.png',
+                    mImg: 'images/content/section-portfolio/' + object.img + '.png',
+                })
+
+mixin questionsItem(object)
+    .section-questions__item
+        .section-questions__item-header
+            .section-questions__item-title-wrapper
+                h3.section-questions__item-title !{object.title}
+                .section-questions__item-title-line
+                .section-questions__item-arrow
+                    +setSvg({name: 'arrow-down'})
+        .section-questions__item-body
+            p !{object.text}

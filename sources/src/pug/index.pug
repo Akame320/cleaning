@@ -8,12 +8,12 @@ block page
                 .section-main__inner
                     .section-main__uppertitle Для тех кто хочет проводить время с близкими, а не за уборкой
                     h1.section-main__title Качественная уборка квартир, домов и офисов  за  3 часа  от 100 тенге/м2
-                       +setImg({
-                           webp: 'images/content/section-main/0.webp',
-                           mWebp: 'images/content/section-main/0.webp',
-                           img: 'images/content/section-main/0.jpg',
-                           mImg: 'images/content/section-main/0.jpg'
-                       })
+                        +setImg({
+                            webp: 'images/content/section-main/0.webp',
+                            mWebp: 'images/content/section-main/0.webp',
+                            img: 'images/content/section-main/0.jpg',
+                            mImg: 'images/content/section-main/0.jpg'
+                        })
                     .section-main__lowertitle наши провереные опытом специалисты используют только экологические материалы
                     .section-main__subtitle оставьте заявку на расчет стоимости вашей уборки
                     form.section-main__form
@@ -48,7 +48,7 @@ block page
         .container
             .section-services-more__inner
                 .section-services-more__title-wrapper
-                    h3.section-services-more__title ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ:
+                    h3.section-services-more__title Что конкретно мы убираем:
                     .section-services-more__title-line
                     .section-services-more__arrow-wrapper
                         button.section-services-more__arrow.arrow-prev
@@ -68,4 +68,215 @@ block page
                 img: 'images/content/section-services-more/1-pc.jpg',
                 mImg: 'images/content/section-services-more/1-mb.jpg'
             })
+    section.section-calculate
+        form.form-submit
+            .container
+                .section-calculate__inner
+                    .section-calculate__title-wrapper
+                        h3.section-calculate__title Шаг 1: Тип уборки
+                        .section-calculate__title-line
+                    .section-calculate__type-data
+                        +calcaulateType({img: '0', title: 'ГЕНЕРАЛЬНАЯ УБОРКА', id: 'type-radio-0'})
+                        +calcaulateType({img: '1', title: 'ПОСЛЕ РЕМОНТА', id: 'type-radio-1'})
+                        +calcaulateType({img: '2', title: 'ПОДДЕРЖИВАЮЩАЯ', id: 'type-radio-2'})
+                    .section-calculate__title-wrapper
+                        h3.section-calculate__title Шаг 2: Количество комнат
+                        .section-calculate__title-line
+                    .section-calculate__rooms-data
+                        +calculateRooms({id: 'rooms-radio-0', number: '1'})
+                        +calculateRooms({id: 'rooms-radio-1', number: '2'})
+                        +calculateRooms({id: 'rooms-radio-2', number: '3'})
+                        +calculateRooms({id: 'rooms-radio-3', number: '4'})
+                        +calculateRooms({id: 'rooms-radio-4', number: '5'})
+                    .section-calculate__title-wrapper
+                        h3.section-calculate__title Шаг 3: Площадь для уборки, м²
+                        .section-calculate__title-line
+                    .section-calculate__area
+                        .section-calculate__area-data
+                            .section-calculate__area-item
+                                .section-calculate__area-item-inner
+                                    input(type='range' min='0' max='400' value='0').section-calculate__area-range
+                                .section-calculate__area-numbers
+                                    span 0
+                                    span 400
+                    .section-calculate__title-wrapper
+                        h3.section-calculate__title Шаг 4: Дополнительные услуги:
+                        .section-calculate__title-line
+                    .section-calculate__service
+                        .section-calculate__service-data
+                            .section-calculate__service-left
+                                +calcualteCheckbox({title: 'Помыть духовой шкаф', id: 'calculate-checkbox-1'})
+                                +calcualteCheckbox({title: 'Глажка белья (ХХХ тг - 1 час)', id: 'calculate-checkbox-2'})
+                                +calcualteCheckbox({title: 'Помыть внутри микроволновки', id: 'calculate-checkbox-3'})
+                                +calcualteCheckbox({title: 'Холодильник', id: 'calculate-checkbox-4'})
+                                +calcualteCheckbox({
+                                    title: 'Мытье посуды (ХХХ тг - 30 минут)',
+                                    id: 'calculate-checkbox-5'
+                                })
+                                +calcualteCheckbox({title: 'Уборка балкона', id: 'calculate-checkbox-6'})
+                                +calcualteCheckbox({title: 'Дезинфекция', id: 'calculate-checkbox-7'})
+                            .section-calculate__service-right
+                                .section-calculate__service-col
+                                    .section-calculate__service-col-inner
+                                        .section-calculate__service-col-title Количество окон
+                                            .section-calculate__service-col-body
+                                                button.section-calculate__service-col-minus
+                                                    +setSvg({name: 'minus'})
+                                                input(type='number' value='0' name='Количество окон').section-calculate__service-col-text
+                                                button.section-calculate__service-col-plus
+                                                    +setSvg({name: 'plus'})
+                                .section-calculate__service-col
+                                    .section-calculate__service-col-inner
+                                        .section-calculate__service-col-title Количество санузлов
+                                            .section-calculate__service-col-body
+                                                button.section-calculate__service-col-minus
+                                                    +setSvg({name: 'minus'})
+                                                input(type='number' min="0" value='1' name='Количество санузлов').section-calculate__service-col-text
+                                                button.section-calculate__service-col-plus
+                                                    +setSvg({name: 'plus'})
+                    .section-calculate__title-wrapper
+                        h3.section-calculate__title Шаг 5: Оставьте ваши контакты и получите точный расчет стоимости вашей уборки
+                        .section-calculate__title-line
+                    .section-calculate
+                        .section-calculate__form
+                            .section-calculate__form-input
+                                +input-name({})
+                            .section-calculate__form-input
+                                +input-tel({})
+                            .section-calculate__form-submit
+                                +input-submit({value: 'Просчитать'})
+    section.section-reviews
+        .container
+            .section-reviews__inner
+                h2.section-reviews__bigtitle ОБРАТНАЯ СВЯЗЬ НАШИХ КЛИЕНТОВ -ЛУЧШАЯ ОЦЕНКА НАШЕЙ ПРОФЕССИОНАЛЬНОЙ РАБОТЫ
+                .section-reviews__slider-wrapper
+                    .section-reviews__arrow-wrapper
+                        button.section-reviews__arrow.arrow-prev
+                            +setSvg({name: 'arrow-right'})
+                        button.section-reviews__arrow.arrow-next
+                            +setSvg({name: 'arrow-left'})
+                    .section-reviews__slider(id='reviews__slider')
+                        +reviewsSlide({img: '1'})
+                        +reviewsSlide({img: '2'})
+                        +reviewsSlide({img: '3'})
+                        +reviewsSlide({img: '1'})
+                        +reviewsSlide({img: '2'})
+                        +reviewsSlide({img: '3'})
+    section.section-team
+        .container
+            .section-team__inner
+                h2.section-team__bigtitle КОМАНДА СПЕЦИАЛИСТОВ НА СТРАЖЕ ЧИСТОТЫ
+                .section-team__data
+                    +teamItem({img: '0', title: 'Мария', subtitle: 'Главный клинер'})
+                    +teamItem({img: '1', title: 'Мария', subtitle: 'Клинер'})
+                    +teamItem({img: '2', title: 'Мария', subtitle: 'Клинер'})
+                    +teamItem({img: '3', title: 'Андрей', subtitle: 'Главный клинер'})
+                    +teamItem({img: '0', title: 'Мария', subtitle: 'Главный клинер'})
+                    +teamItem({img: '1', title: 'Мария', subtitle: 'Клинер'})
+                    +teamItem({img: '2', title: 'Мария', subtitle: 'Клинер'})
+    div.block-blue-bg
+        section.section-guarantee
+            .container
+                .section-guarantee__inner
+                    h2.section-guarantee__bigtitle ВАША 3-Х УРОВНЕВАЯ ГАРАНТИЯ
+                    .section-guarantee__data
+                        +guaranteeItem({
+                            icon: 'guarantee-1',
+                            title: 'Страховка от ущерба',
+                            text: 'Полноценная компенсация, если вдруг будет нанесен ущерб вашему имуществу'
+                        })
+                        +guaranteeItem({
+                            icon: 'guarantee-2',
+                            title: 'Средства ЭКО+',
+                            text: 'Используем гипоаллергенные средства с маркировкой ЭКО+ (безопасно для детей и животных)'
+                        })
+                        +guaranteeItem({
+                            icon: 'guarantee-3',
+                            title: 'Честная стоимость',
+                            text: 'Не выдумываем доп. услуги по ходу уборки. Нет скрытых платежей, цены фиксированы'
+                        })
+        section.section-equipment
+            .container
+                .section-equipment__inner
+                    h2.section-equipment__bigtitle НАШЕ ЭЛИТНОЕ ОБОРУДОВАНИЕ И ЧИСТЯЩИЕ СРЕДСТВА -ГАРАНТ ВАШЕЙ УВЕРЕННОСТИ
+                    .section-equipment__data
+                        +equipmentItem({
+                            img: '0',
+                            name: 'vileda professional ',
+                            fromImg: 'from-0',
+                            fromText: 'Германия'
+                        })
+                        +equipmentItem({img: '1', name: 'karcher ', fromImg: 'from-0', fromText: 'Германия'})
+                        +equipmentItem({img: '2', name: 'santoemma ', fromImg: 'from-1', fromText: 'Италия'})
+        section.section-partners
+            .container
+                .section-partners__inner
+                    .section-partners__data
+                        +partnersItem({img: '0'})
+                        +partnersItem({img: '1'})
+                        +partnersItem({img: '2'})
+                        +partnersItem({img: '3'})
+    section.section-portfolio
+        .container
+            .section-portfolio__inner
+                h2.section-portfolio__bigtitle НАШИ РАБОТЫ
+                .section-portfolio__slider
+                    +portfolioSlide({img: '0'})
+                    +portfolioSlide({img: '1'})
+                    +portfolioSlide({img: '2'})
+                .section-portfolio__sldier-wrapper
+                    .section-portfolio__arrow-wrapper
+                        button.section-portfolio__arrow.arrow-prev
+                            +setSvg({name: 'arrow-right'})
+                        button.section-portfolio__arrow.arrow-next
+                            +setSvg({name: 'arrow-left'})
+
+    section.section-get-price
+        .container
+            .section-get-price__inner
+                h2.section-get-price__bigtitle УЗНАЙТЕ ЦЕНУ ПО ФОТО С ТОЧНОСТЬЮ 95%
+                .section-get-price__data
+                    .section-get-price__left
+                        .section-get-price__title Воспользуйтесь удобным для вас мессенджером, чтобы перейти в чат и загрузить фотографию для оценки объема работ
+                        .section-get-price__btns
+                            a(href='').section-get-price__wt
+                                +setSvg({name: 'icon-wt'})
+                                span Whatsapp
+                            a(href='').section-get-price__tg
+                                +setSvg({name: 'icon-tg'})
+                                span Telegram
+                    .section-get-price__right
+                        .section-get-price__img
+                            +setImg({
+                                webp: 'images/content/section-get-price/0.webp',
+                                mWebp: 'images/content/section-get-price/0.webp',
+                                img: 'images/content/section-get-price/0.png',
+                                mImg: 'images/content/section-get-price/0.png'
+                            })
+    section.section-questions
+        .container
+            .section-questions__inner
+                h2.section-questions__bigtitle Часто задаваемые вопросы:
+                .section-questions__data
+                    +questionsItem({title: 'Могу ли я заказывать уборку на еженедельной основе?', text: 'Спокойно оставляйте клинера наводить чистоту и отправляйтесь по делам. Добавьте дополнительные опции по доставке ключей — клинер приедет, куда скажете, заберёт у вас ключи и потом привезёт их обратно'})
+                    +questionsItem({title: 'Могу ли я уйти по делам, когда приедет клинер?', text: 'Спокойно оставляйте клинера наводить чистоту и отправляйтесь по делам. Добавьте дополнительные опции по доставке ключей — клинер приедет, куда скажете, заберёт у вас ключи и потом привезёт их обратно'})
+                    +questionsItem({title: 'Могу ли я заказывать уборку на еженедельной основе?', text: 'Спокойно оставляйте клинера наводить чистоту и отправляйтесь по делам. Добавьте дополнительные опции по доставке ключей — клинер приедет, куда скажете, заберёт у вас ключи и потом привезёт их обратно'})
+                    +questionsItem({title: 'Убираетесь ли вы в частных домах, коттеджах и на дачах?', text: 'Спокойно оставляйте клинера наводить чистоту и отправляйтесь по делам. Добавьте дополнительные опции по доставке ключей — клинер приедет, куда скажете, заберёт у вас ключи и потом привезёт их обратно'})
+
+    div.map
+        .map__inner(id='map')
+        .map__contacts-wrapper
+            .container
+                .map__contacts
+                    .map__contacts-row
+                        .map__contacts-icon
+                            +setSvg({name: 'mark'})
+                        .map__contacts-text г. Алматы , ул. пр. Рыскулова, 68 «а»
+                    .map__contacts-row
+                        .map__contacts-icon
+                            +setSvg({name: 'phone-map'})
+                        a(href='tel: +77077014200').map__contacts-link +7 707 701 42 00
+
+
+
     include sections/popup

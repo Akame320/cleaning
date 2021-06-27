@@ -4,10 +4,82 @@ $(function () {
         $('.menu-list').slideToggle(250);
     })
 
+    $('.section-calculate__area-range').rangeslider({
+        polyfill: false,
+        rangeClass: 'section-calculate__area-range',
+        disabledClass: 'rangeslider--disabled',
+        horizontalClass: 'rangeslider--horizontal',
+        verticalClass: 'rangeslider--vertical',
+        fillClass: 'section-calculate__area-range-fill',
+        handleClass: 'section-calculate__area-range-circle',
+
+        onInit: function () {
+            this.output = $('<div class="range-output" />').insertAfter(this.$range).html(this.$element.val());
+        },
+        onSlide: function (position, value) {
+            this.output.html(value);
+            $('.range-output').css({
+                left: position
+            })
+        }
+    });
+
+    $('.section-calculate__service-col-minus').on('click', function () {
+        if (+$(this).prev('input[type="number"]').val() > 0) {
+            $(this).next('input[type="number"]').val(+$(this).next('input[type="number"]').val() - 1);
+        }
+    })
+
+    $('.section-calculate__service-col-plus').on('click', function () {
+        $(this).prev('input[type="number"]').val(+$(this).prev('input[type="number"]').val() + 1);
+    })
+
     $('.langs-block__active').on('click', function () {
         $('.lang-toggle').toggleClass('active')
         $(this).toggleClass('active')
     })
+
+    $("#reviews__slider").slick({
+        dots: false,
+        arrows: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        prevArrow: $("button.section-reviews__arrow.arrow-prev"),
+        nextArrow: $("button.section-reviews__arrow.arrow-next"),
+        responsive: [
+            {
+                breakpoint: 1500,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 900,
+                settings: {
+                    slidesToScroll: 1,
+                    slidesToShow: 1,
+                    centerMode: false
+                }
+            }
+        ]
+    });
+
+    $('.section-portfolio__slider').slick({
+        centerMode: true,
+        centerPadding: '39rem',
+        prevArrow: $("button.section-portfolio__arrow.arrow-prev"),
+        nextArrow: $("button.section-portfolio__arrow.arrow-next"),
+        responsive: [
+            {
+                breakpoint: 1023,
+                settings: {
+                    centerPadding: '0rem',
+                }
+            },
+        ]
+    })
+
 
 
     $('.section-services-more__slider').slick({
@@ -31,6 +103,22 @@ $(function () {
             }
         ]
     })
+    $('.section-questions__item-header').on('click', function (){
+        if($(this).hasClass('active')){
+            $('.section-questions__item-header').removeClass('active');
+            $('.section-questions__item-body').slideUp(250);
+
+            console.log($(this).has('active'))
+        }else{
+            $('.section-questions__item-header').removeClass('active');
+            $('.section-questions__item-body').slideUp(250);
+
+            $(this).toggleClass('active');
+            $(this).next('.section-questions__item-body').slideToggle(250);
+        }
+    })
+
+    $('.section-questions__item-header').eq(0).click();
 
 
     $('[data-href]').on('click', function (event) {
@@ -40,12 +128,12 @@ $(function () {
         $('html').animate({scrollTop: positionElemY - 150}, 1100);
     })
 
-    $('[data-popup]').on('click', function (){
-       let str = $(this).attr('data-popup');
+    $('[data-popup]').on('click', function () {
+        let str = $(this).attr('data-popup');
 
-       console.log(str)
+        console.log(str)
 
-       $(`#${str}`).addClass('active');
+        $(`#${str}`).addClass('active');
     });
 
 
@@ -58,16 +146,15 @@ $(function () {
     });
 
     // if($(window))
-    $(window).on('scroll', function (){
-        if($(this).scrollTop() > $('#first-section').innerHeight()){
+    $(window).on('scroll', function () {
+        if ($(this).scrollTop() > $('#first-section').innerHeight()) {
             $('header').addClass('fixed');
-        }else{
+        } else {
             $('header').removeClass('fixed');
             $('.menu-toggle').removeClass('active')
             $('.menu-list').slideUp(250);
         }
     })
-
 })
 
 
@@ -212,3 +299,23 @@ $(".form-submit").on("submit", function (event) {
         }
     }
 })
+
+setTimeout(function(){
+    var elem = document.createElement('script');
+    elem.type = 'text/javascript';
+    elem.src = '//api-maps.yandex.ru/2.1/?load=package.standard&lang=ru-RU&onload=getYaMap';
+    document.getElementsByTagName('body')[0].appendChild(elem);
+}, 2000);
+
+function getYaMap(){
+    var myMap = new ymaps.Map("map",{center: [43.285063, 76.923313],zoom: 17});
+    myMap.geoObjects.add(new ymaps.Placemark([43.285063, 76.923313], {
+        }, {
+            // preset: 'islands#greenDotIconWithCaption',
+            // iconColor: '#1EAFCF',
+            iconImageHref: '../images/content/icon/map-icon.svg', // Адрес до картинки
+            iconImageSize: [140, 140],
+            iconImageOffset: [-5, -38]
+        }))
+
+}

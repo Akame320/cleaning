@@ -1,0 +1,74 @@
+.footer {
+  background-color: #1EAFCF;
+
+  padding: 4.5rem 0;
+
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @media screen and (max-width: $mobile-screen) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__logo{
+    @media screen and (max-width: $mobile-screen) {
+      margin-bottom: 2rem;
+
+      order: 1;
+
+      .text{
+        font-size: 2rem;
+        max-width: 17rem;
+      }
+    }
+  }
+
+  &__police {
+    font-size: 1.6rem;
+    font-weight: 400;
+
+    color: white;
+
+    text-align: center;
+
+    max-width: 31rem;
+
+    @media screen and (max-width: $mobile-screen) {
+      font-size: 2rem;
+
+      max-width: 44rem;
+
+      order: 3;
+    }
+  }
+
+  &__dev {
+    font-size: 1.6rem;
+    font-weight: 400;
+
+    color: white;
+
+    text-align: center;
+
+    max-width: 15rem;
+
+    @media screen and (max-width: $mobile-screen) {
+      font-size: 2rem;
+
+      max-width: 20rem;
+
+      margin-bottom: 2rem;
+
+      order: 2;
+    }
+
+    img, source {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
