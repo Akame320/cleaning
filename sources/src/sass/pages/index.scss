@@ -57,6 +57,8 @@
 
       margin-right: 0;
 
+      font-size: 2.4rem;
+
       max-width: none;
     }
 
@@ -83,6 +85,11 @@
     text-align: center;
 
     color: white;
+
+    @media screen and (max-width: $mobile-screen) {
+      font-size: 1.7rem;
+      font-weight: 400;
+    }
   }
 
   &__subtitle {
@@ -103,6 +110,8 @@
 
     @media screen and (max-width: $mobile-screen) {
       margin-top: 3rem;
+
+      font-size: 2rem;
     }
   }
 
@@ -537,6 +546,29 @@
 //CALCULATE
 
 .section-calculate {
+
+  &__bigtitle {
+    font-size: 4rem;
+    font-weight: 700;
+
+    max-width: 100rem;
+
+    @include margin(auto);
+
+    margin-bottom: 2rem;
+    margin-top: 0;
+
+    text-align: center;
+
+    color: rgba(33, 128, 149, 1);
+
+    text-transform: uppercase;
+
+    @media screen and (max-width: $mobile-screen) {
+      font-size: 3rem;
+    }
+  }
+
   &__title {
     color: $color-main-2;
 
@@ -762,6 +794,8 @@
       position: relative;
 
       background-color: #ADADAD;
+
+      cursor: pointer;
     }
 
     &-range-fill {
@@ -1125,6 +1159,12 @@
 
     @media screen and (max-width: $mobile-screen) {
       font-size: 2.3rem;
+
+      .remove-mobile {
+        @media screen and (max-width: $mobile-screen) {
+          display: none;
+        }
+      }
     }
   }
 
@@ -1245,7 +1285,7 @@
     text-transform: uppercase;
 
     @media screen and (max-width: $mobile-screen) {
-      font-size: 3rem;
+      font-size: 2.9rem;
     }
   }
 
@@ -1256,6 +1296,73 @@
     flex-wrap: wrap;
 
     @include margin(-1rem);
+
+    &-wrapper {
+      position: relative;
+    }
+  }
+
+  &__arrow-wrapper {
+    position: absolute;
+    top: 50%;
+    left: -2rem;
+    right: -2rem;
+    z-index: 10;
+
+    visibility: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    display: none;
+
+    @media screen and (max-width: $mobile-screen) {
+      display: flex;
+    }
+  }
+
+  &__arrow {
+    width: 5rem;
+    height: 5rem;
+
+    border-radius: 1.2rem;
+
+    margin: 0 0.7rem;
+
+    background: #fff;
+
+    box-shadow: 0px 4px 4px rgba(4, 90, 108, 0.5);
+
+    border: 2px solid #218095;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: all 0.2s linear;
+
+    visibility: visible;
+
+    &:hover {
+      background: #218095;
+      box-shadow: 0px 4px 4px rgba(4, 90, 108, 0);
+
+      .icon {
+        fill: white;
+      }
+    }
+
+    .icon {
+      width: 1rem;
+      height: 2rem;
+
+      fill: #218095;
+
+      transition: all 0.2s linear;
+    }
   }
 
   &__item {
@@ -1270,6 +1377,8 @@
 
     @media screen and (max-width: $mobile-screen) {
       max-width: 50%;
+
+      padding: 2rem 6rem;
     }
 
     &-inner {
@@ -1419,8 +1528,10 @@
   padding: 20rem 0;
 
   @media screen and (max-width: $mobile-screen) {
-    background: url('../images/content/block-blue-bg/bg-mb.jpg') center no-repeat;
-    background-size: cover;
+    background: radial-gradient(50% 50% at 50% 50%, #84E6FC 0%, #0996B5 100%);
+
+    padding: 5rem 0;
+    margin: 5rem 0;
   }
 }
 
@@ -1460,6 +1571,73 @@
     flex-wrap: wrap;
 
     @include margin(-1.5rem);
+    
+    &-wrapper{
+      position: relative;
+    }
+  }
+
+  &__arrow-wrapper {
+    position: absolute;
+    top: 50%;
+    left: -2rem;
+    right: -2rem;
+    z-index: 10;
+
+    visibility: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    display: none;
+
+    @media screen and (max-width: $mobile-screen) {
+      display: flex;
+    }
+  }
+
+  &__arrow {
+    width: 5rem;
+    height: 5rem;
+
+    border-radius: 1.2rem;
+
+    margin: 0 0.7rem;
+
+    background: #fff;
+
+    box-shadow: 0px 4px 4px rgba(4, 90, 108, 0.5);
+
+    border: 2px solid #218095;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: all 0.2s linear;
+
+    visibility: visible;
+
+    &:hover {
+      background: #218095;
+      box-shadow: 0px 4px 4px rgba(4, 90, 108, 0);
+
+      .icon {
+        fill: white;
+      }
+    }
+
+    .icon {
+      width: 1rem;
+      height: 2rem;
+
+      fill: #218095;
+
+      transition: all 0.2s linear;
+    }
   }
 
   &__item {
@@ -1600,6 +1778,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media screen and (max-width: $mobile-screen) {
+      position: static;
+
+      justify-content: center;
+
+      margin-top: 2rem;
+    }
   }
 
   &__arrow {

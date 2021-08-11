@@ -1,0 +1,70 @@
+.section-thanks{
+  background: url("../images/content/section-thanks/bg.jpg") center no-repeat;
+  background-size: cover;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  height: calc(100vh - 160px);
+
+  margin-top: 9.8rem;
+
+  position: relative;
+
+  &__wrapper{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 100;
+  }
+
+  &__title{
+    font-size: 4rem;
+    font-weight: 800;
+
+    text-align: left;
+    text-transform: uppercase;
+
+    margin-bottom: 6rem;
+
+    color: $color-main;
+
+    @media screen and (max-width: $mobile-screen) {
+      text-align: center;
+    }
+  }
+
+  &__subtitle{
+    font-size: 2.4rem;
+    font-weight: 800;
+
+    text-align: left;
+    text-transform: uppercase;
+
+    margin-bottom: 6rem;
+
+    color: $color-main;
+
+    @media screen and (max-width: $mobile-screen) {
+      text-align: center;
+
+      font-size: 1.9rem;
+    }
+  }
+
+  &__btn{
+    max-width: 24.4rem;
+
+    display: flex;
+
+    @media screen and (max-width: $mobile-screen) {
+      max-width: 40rem;
+      justify-content: center;
+    }
+  }
+
+}

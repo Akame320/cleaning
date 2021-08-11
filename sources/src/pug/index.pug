@@ -7,7 +7,7 @@ block page
             .container
                 .section-main__inner
                     .section-main__uppertitle Для тех кто хочет проводить время с близкими, а не за уборкой
-                    h1.section-main__title Качественная уборка квартир, домов и офисов  за  3 часа  от 100 тенге/м2
+                    h1.section-main__title Качественная уборка квартир, домов и офисов  за  3 часа  от 200 тенге/м2
                         +setImg({
                             webp: 'images/content/section-main/0.webp',
                             mWebp: 'images/content/section-main/0.webp',
@@ -16,10 +16,11 @@ block page
                         })
                     .section-main__lowertitle наши провереные опытом специалисты используют только экологические материалы
                     .section-main__subtitle оставьте заявку на расчет стоимости вашей уборки
-                    form.section-main__form
+                    form.section-main__form.form-submit
                         .section-main__form-tel
                             +input-tel({})
                         .section-main__form-submit
+                            input(type='hidden' name='who' value='Первый экран')
                             +input-submit({value: 'Узнать стоимость'})
     section.section-services
         .container
@@ -27,10 +28,30 @@ block page
                 h2.section-services__bigtitle Виды услуг которые мы оказываем
                 .section-services__subtitle Наш сотрудник приезжает к вам в согласованное время с полным комплектом профессиональных средств и техники, после чего приступает к уборке. В конце уборки вам остается только оценить результат нашей работы
                 .section-services__data
-                    +servicesCart({src: '0', title: 'ПОДДЕРЖИВАЮЩАЯ УБОРКА', popup: 'popup-services-0'})
-                    +servicesCart({src: '1', title: 'ГЕНЕРАЛЬНАЯ УБОРКА', popup: 'popup-services-1'})
-                    +servicesCart({src: '2', title: 'ПОСТСРОИТЕЛЬНАЯ УБОРКА', popup: 'popup-services-2'})
-                    +servicesCart({src: '3', title: 'ЭКО-УБОРКА ', popup: 'popup-services-3'})
+                    +servicesCart({
+                        src: '0',
+                        title: 'ПОДДЕРЖИВАЮЩАЯ УБОРКА',
+                        dataSet: 'Заказ услуги поддерживающая уборка',
+                        popup: 'popup-services-2'
+                    })
+                    +servicesCart({
+                        src: '1',
+                        title: 'ГЕНЕРАЛЬНАЯ УБОРКА',
+                        dataSet: 'Заказ услуги генеральная уборка',
+                        popup: 'popup-services-0'
+                    })
+                    +servicesCart({
+                        src: '2',
+                        title: 'ПОСТСРОИТЕЛЬНАЯ УБОРКА',
+                        dataSet: 'Заказ услуги пост. строительная уборка',
+                        popup: 'popup-services-1'
+                    })
+                    +servicesCart({
+                        src: '3',
+                        title: 'ЭКО-УБОРКА ',
+                        dataSet: 'Заказ услуги эко уборка',
+                        popup: 'popup-services-3'
+                    })
     section.section-services-additional
         .container
             .section-services-additional__inner
@@ -38,12 +59,11 @@ block page
                     h3.section-services-additional__title ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ:
                     .section-services-additional__title-line
                 .section-services-additional__data
-                    +servicesItem({icon: 'services-0', title: 'Мытьё окон ', subtitle: 'от ХХХ тг.'})
-                    +servicesItem({icon: 'services-1', title: 'Мытьё холодильника ', subtitle: 'от ХХХ тг.'})
-                    +servicesItem({icon: 'services-2', title: 'Мытьё балкона ', subtitle: 'от ХХХ тг.'})
-                    +servicesItem({icon: 'services-3', title: 'Химчистка ', subtitle: 'от ХХХ тг.'})
-                    +servicesItem({icon: 'services-4', title: 'Химчистка ', subtitle: 'от ХХХ тг.'})
-                    +servicesItem({icon: 'services-5', title: 'Дезинфекция', subtitle: 'от ХХХ тг.'})
+                    +servicesItem({icon: 'services-0', title: 'Мытьё окон ', subtitle: 'от 2000 тг.'})
+                    +servicesItem({icon: 'services-1', title: 'Мытьё холодильника ', subtitle: 'от 2500 тг.'})
+                    +servicesItem({icon: 'services-2', title: 'Мытьё балкона ', subtitle: 'от 5000 тг.'})
+                    +servicesItem({icon: 'services-3', title: 'Химчистка ', subtitle: 'от 2500 тг.'})
+                    +servicesItem({icon: 'services-5', title: 'Дезинфекция', subtitle: 'от 10000 тг.'})
     section.section-services-more
         .container
             .section-services-more__inner
@@ -68,10 +88,23 @@ block page
                 img: 'images/content/section-services-more/1-pc.jpg',
                 mImg: 'images/content/section-services-more/1-mb.jpg'
             })
+            +servicesSlide({
+                webp: 'images/content/section-services-more/2-pc.webp',
+                mWebp: 'images/content/section-services-more/2-mb.webp',
+                img: 'images/content/section-services-more/2-pc.jpg',
+                mImg: 'images/content/section-services-more/2-mb.jpg'
+            })
+            +servicesSlide({
+                webp: 'images/content/section-services-more/3-pc.webp',
+                mWebp: 'images/content/section-services-more/3-mb.webp',
+                img: 'images/content/section-services-more/3-pc.jpg',
+                mImg: 'images/content/section-services-more/3-mb.jpg'
+            })
     section.section-calculate
         form.form-submit
             .container
                 .section-calculate__inner
+                    h2.section-calculate__bigtitle РАССЧИТАЙТЕ ПРИМЕРНУЮ СТОИМОСТЬ ВАШЕЙ УБОРКИ
                     .section-calculate__title-wrapper
                         h3.section-calculate__title Шаг 1: Тип уборки
                         .section-calculate__title-line
@@ -95,7 +128,7 @@ block page
                         .section-calculate__area-data
                             .section-calculate__area-item
                                 .section-calculate__area-item-inner
-                                    input(type='range' min='0' max='400' value='0').section-calculate__area-range
+                                    input.set-attr-val(type='range' id='range-1' name='sqp' min='0' max='400' value='0').section-calculate__area-range
                                 .section-calculate__area-numbers
                                     span 0
                                     span 400
@@ -106,13 +139,9 @@ block page
                         .section-calculate__service-data
                             .section-calculate__service-left
                                 +calcualteCheckbox({title: 'Помыть духовой шкаф', id: 'calculate-checkbox-1'})
-                                +calcualteCheckbox({title: 'Глажка белья (ХХХ тг - 1 час)', id: 'calculate-checkbox-2'})
                                 +calcualteCheckbox({title: 'Помыть внутри микроволновки', id: 'calculate-checkbox-3'})
                                 +calcualteCheckbox({title: 'Холодильник', id: 'calculate-checkbox-4'})
-                                +calcualteCheckbox({
-                                    title: 'Мытье посуды (ХХХ тг - 30 минут)',
-                                    id: 'calculate-checkbox-5'
-                                })
+                                +calcualteCheckbox({title: 'Мытье посуды (от 1000 тг.)', id: 'calculate-checkbox-5'})
                                 +calcualteCheckbox({title: 'Уборка балкона', id: 'calculate-checkbox-6'})
                                 +calcualteCheckbox({title: 'Дезинфекция', id: 'calculate-checkbox-7'})
                             .section-calculate__service-right
@@ -120,19 +149,19 @@ block page
                                     .section-calculate__service-col-inner
                                         .section-calculate__service-col-title Количество окон
                                             .section-calculate__service-col-body
-                                                button.section-calculate__service-col-minus
+                                                button.section-calculate__service-col-minus(type='button')
                                                     +setSvg({name: 'minus'})
-                                                input(type='number' value='0' name='Количество окон').section-calculate__service-col-text
-                                                button.section-calculate__service-col-plus
+                                                input(type='number' value='0' name='okna').section-calculate__service-col-text
+                                                button.section-calculate__service-col-plus(type='button')
                                                     +setSvg({name: 'plus'})
                                 .section-calculate__service-col
                                     .section-calculate__service-col-inner
                                         .section-calculate__service-col-title Количество санузлов
                                             .section-calculate__service-col-body
-                                                button.section-calculate__service-col-minus
+                                                button.section-calculate__service-col-minus(type='button')
                                                     +setSvg({name: 'minus'})
-                                                input(type='number' min="0" value='1' name='Количество санузлов').section-calculate__service-col-text
-                                                button.section-calculate__service-col-plus
+                                                input(type='number' min="0" value='0' name='uzla').section-calculate__service-col-text
+                                                button.section-calculate__service-col-plus(type='button')
                                                     +setSvg({name: 'plus'})
                     .section-calculate__title-wrapper
                         h3.section-calculate__title Шаг 5: Оставьте ваши контакты и получите точный расчет стоимости вашей уборки
@@ -144,11 +173,13 @@ block page
                             .section-calculate__form-input
                                 +input-tel({})
                             .section-calculate__form-submit
+                                input(type='hidden' name='who' value='квиз')
                                 +input-submit({value: 'Просчитать'})
+
     section.section-reviews
         .container
             .section-reviews__inner
-                h2.section-reviews__bigtitle ОБРАТНАЯ СВЯЗЬ НАШИХ КЛИЕНТОВ -ЛУЧШАЯ ОЦЕНКА НАШЕЙ ПРОФЕССИОНАЛЬНОЙ РАБОТЫ
+                h2.section-reviews__bigtitle ОБРАТНАЯ СВЯЗЬ НАШИХ КЛИЕНТОВ <span class='remove-mobile'> -ЛУЧШАЯ ОЦЕНКА НАШЕЙ ПРОФЕССИОНАЛЬНОЙ РАБОТЫ</span>
                 .section-reviews__slider-wrapper
                     .section-reviews__arrow-wrapper
                         button.section-reviews__arrow.arrow-prev
@@ -159,21 +190,32 @@ block page
                         +reviewsSlide({img: '1'})
                         +reviewsSlide({img: '2'})
                         +reviewsSlide({img: '3'})
-                        +reviewsSlide({img: '1'})
-                        +reviewsSlide({img: '2'})
-                        +reviewsSlide({img: '3'})
+                        +reviewsSlide({img: '4'})
+                        +reviewsSlide({img: '5'})
+                        +reviewsSlide({img: '6'})
+                        +reviewsSlide({img: '7'})
+                        +reviewsSlide({img: '8'})
+                        +reviewsSlide({img: '9'})
     section.section-team
         .container
             .section-team__inner
                 h2.section-team__bigtitle КОМАНДА СПЕЦИАЛИСТОВ НА СТРАЖЕ ЧИСТОТЫ
-                .section-team__data
-                    +teamItem({img: '0', title: 'Мария', subtitle: 'Главный клинер'})
-                    +teamItem({img: '1', title: 'Мария', subtitle: 'Клинер'})
-                    +teamItem({img: '2', title: 'Мария', subtitle: 'Клинер'})
-                    +teamItem({img: '3', title: 'Андрей', subtitle: 'Главный клинер'})
-                    +teamItem({img: '0', title: 'Мария', subtitle: 'Главный клинер'})
-                    +teamItem({img: '1', title: 'Мария', subtitle: 'Клинер'})
-                    +teamItem({img: '2', title: 'Мария', subtitle: 'Клинер'})
+                .section-team__data-wrapper
+                    .section-team__slider-wrapper
+                        .section-team__arrow-wrapper
+                            button.section-team__arrow.arrow-prev
+                                +setSvg({name: 'arrow-right'})
+                            button.section-team__arrow.arrow-next
+                                +setSvg({name: 'arrow-left'})
+                    .section-team__data
+                        +teamItem({img: '5', title: 'Тахмина', subtitle: 'Администратор'})
+                        +teamItem({img: '2', title: 'Самал', subtitle: 'Оператор кол центра'})
+                        +teamItem({img: '0', title: 'Оксана', subtitle: 'Клинер'})
+                        +teamItem({img: '1', title: 'Жадыра', subtitle: 'Клинер'})
+                        +teamItem({img: '3', title: 'Галия', subtitle: 'Клинер'})
+                        +teamItem({img: '4', title: 'Айдана', subtitle: 'Клинер'})
+                        +teamItem({img: '6', title: 'Макпал', subtitle: 'Клинер'})
+                        +teamItem({img: '7', title: 'Адылжан', subtitle: 'Водитель'})
     div.block-blue-bg
         section.section-guarantee
             .container
@@ -199,15 +241,22 @@ block page
             .container
                 .section-equipment__inner
                     h2.section-equipment__bigtitle НАШЕ ЭЛИТНОЕ ОБОРУДОВАНИЕ И ЧИСТЯЩИЕ СРЕДСТВА -ГАРАНТ ВАШЕЙ УВЕРЕННОСТИ
-                    .section-equipment__data
-                        +equipmentItem({
-                            img: '0',
-                            name: 'vileda professional ',
-                            fromImg: 'from-0',
-                            fromText: 'Германия'
-                        })
-                        +equipmentItem({img: '1', name: 'karcher ', fromImg: 'from-0', fromText: 'Германия'})
-                        +equipmentItem({img: '2', name: 'santoemma ', fromImg: 'from-1', fromText: 'Италия'})
+                    .section-equipment__data-wrapper
+                        .section-equipment__slider-wrapper
+                            .section-equipment__arrow-wrapper
+                                button.section-equipment__arrow.arrow-prev
+                                    +setSvg({name: 'arrow-right'})
+                                button.section-equipment__arrow.arrow-next
+                                    +setSvg({name: 'arrow-left'})
+                        .section-equipment__data
+                            +equipmentItem({
+                                img: '0',
+                                name: 'vileda professional',
+                                fromImg: 'from-0',
+                                fromText: 'Германия'
+                            })
+                            +equipmentItem({img: '1', name: 'karcher ', fromImg: 'from-0', fromText: 'Германия'})
+                            +equipmentItem({img: '2', name: 'santoemma ', fromImg: 'from-1', fromText: 'Италия'})
         section.section-partners
             .container
                 .section-partners__inner
@@ -224,6 +273,20 @@ block page
                     +portfolioSlide({img: '0'})
                     +portfolioSlide({img: '1'})
                     +portfolioSlide({img: '2'})
+                    +portfolioSlide({img: '3'})
+                    +portfolioSlide({img: '4'})
+                    +portfolioSlide({img: '5'})
+                    +portfolioSlide({img: '6'})
+                    +portfolioSlide({img: '7'})
+                    +portfolioSlide({img: '8'})
+                    +portfolioSlide({img: '9'})
+                    +portfolioSlide({img: '10'})
+                    +portfolioSlide({img: '11'})
+                    +portfolioSlide({img: '12'})
+                    +portfolioSlide({img: '13'})
+                    +portfolioSlide({img: '14'})
+                    +portfolioSlide({img: '15'})
+                    +portfolioSlide({img: '16'})
                 .section-portfolio__sldier-wrapper
                     .section-portfolio__arrow-wrapper
                         button.section-portfolio__arrow.arrow-prev
@@ -239,10 +302,10 @@ block page
                     .section-get-price__left
                         .section-get-price__title Воспользуйтесь удобным для вас мессенджером, чтобы перейти в чат и загрузить фотографию для оценки объема работ
                         .section-get-price__btns
-                            a(href='').section-get-price__wt
+                            a(href='https://wa.me/77077014200' target='_blank').section-get-price__wt
                                 +setSvg({name: 'icon-wt'})
                                 span Whatsapp
-                            a(href='').section-get-price__tg
+                            a(href='https://telegram.im/@dstclean' target='_blank').section-get-price__tg
                                 +setSvg({name: 'icon-tg'})
                                 span Telegram
                     .section-get-price__right
@@ -258,10 +321,22 @@ block page
             .section-questions__inner
                 h2.section-questions__bigtitle Часто задаваемые вопросы:
                 .section-questions__data
-                    +questionsItem({title: 'Могу ли я заказывать уборку на еженедельной основе?', text: 'Спокойно оставляйте клинера наводить чистоту и отправляйтесь по делам. Добавьте дополнительные опции по доставке ключей — клинер приедет, куда скажете, заберёт у вас ключи и потом привезёт их обратно'})
-                    +questionsItem({title: 'Могу ли я уйти по делам, когда приедет клинер?', text: 'Спокойно оставляйте клинера наводить чистоту и отправляйтесь по делам. Добавьте дополнительные опции по доставке ключей — клинер приедет, куда скажете, заберёт у вас ключи и потом привезёт их обратно'})
-                    +questionsItem({title: 'Могу ли я заказывать уборку на еженедельной основе?', text: 'Спокойно оставляйте клинера наводить чистоту и отправляйтесь по делам. Добавьте дополнительные опции по доставке ключей — клинер приедет, куда скажете, заберёт у вас ключи и потом привезёт их обратно'})
-                    +questionsItem({title: 'Убираетесь ли вы в частных домах, коттеджах и на дачах?', text: 'Спокойно оставляйте клинера наводить чистоту и отправляйтесь по делам. Добавьте дополнительные опции по доставке ключей — клинер приедет, куда скажете, заберёт у вас ключи и потом привезёт их обратно'})
+                    +questionsItem({
+                        title: 'Могу ли я заказывать уборку на еженедельной основе?',
+                        text: 'Спокойно оставляйте клинера наводить чистоту и отправляйтесь по делам. Добавьте дополнительные опции по доставке ключей — клинер приедет, куда скажете, заберёт у вас ключи и потом привезёт их обратно'
+                    })
+                    +questionsItem({
+                        title: 'Могу ли я уйти по делам, когда приедет клинер?',
+                        text: 'Спокойно оставляйте клинера наводить чистоту и отправляйтесь по делам. Добавьте дополнительные опции по доставке ключей — клинер приедет, куда скажете, заберёт у вас ключи и потом привезёт их обратно'
+                    })
+                    +questionsItem({
+                        title: 'Могу ли я заказывать уборку на еженедельной основе?',
+                        text: 'Спокойно оставляйте клинера наводить чистоту и отправляйтесь по делам. Добавьте дополнительные опции по доставке ключей — клинер приедет, куда скажете, заберёт у вас ключи и потом привезёт их обратно'
+                    })
+                    +questionsItem({
+                        title: 'Убираетесь ли вы в частных домах, коттеджах и на дачах?',
+                        text: 'Спокойно оставляйте клинера наводить чистоту и отправляйтесь по делам. Добавьте дополнительные опции по доставке ключей — клинер приедет, куда скажете, заберёт у вас ключи и потом привезёт их обратно'
+                    })
 
     div.map
         .map__inner(id='map')

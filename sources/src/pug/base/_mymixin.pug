@@ -53,7 +53,7 @@ mixin servicesCart(object)
                         mImg: 'images/content/section-services/'+object.src+'.jpg'
                     })
                 div(data-popup=object.popup).section-services__cart-more Подробнее
-                .section-services__cart-order.open-popup-form Узнать стоимость
+                .section-services__cart-order.set-attr-popup(data-set-attr-popup=object.dataSet) Узнать стоимость
 
 mixin servicesItem(object)
     .section-services-additional__item
@@ -77,7 +77,7 @@ mixin servicesSlide(object)
 mixin calcaulateType(object)
     .section-calculate__type-item
         .section-calculate__type-item-inner
-            input(type='radio' id=object.id name='type').section-calculate__type-radio
+            input(type='radio' value=object.title id=object.id name='caltype').section-calculate__type-radio
             label(for=object.id).section-calculate__type-label
                 .section-calculate__type-img
                     +setImg({
@@ -91,14 +91,14 @@ mixin calcaulateType(object)
 mixin calculateRooms(object)
     .section-calculate__rooms-item
         .section-calculate__rooms-item-inner
-            input(id=object.id type='radio' name='rooms').section-calculate__rooms-radio
+            input(id=object.id value=object.number type='radio' name='rooms').section-calculate__rooms-radio
             label(for=object.id).section-calculate__rooms-label
                 .section-calculate__rooms-number !{object.number}
 
 mixin calcualteCheckbox(object)
     .section-calculate__service-item
         .section-calculate__service-item-inner
-            input(type='checkbox' name=object.title id=object.id ).section-calculate__service-checkbox
+            input(type='checkbox' value=object.title name=object.id id=object.id ).section-calculate__service-checkbox
             label(for=object.id).section-calculate__service-label
                 .section-calculate__service-icon
                     +setSvg({name: 'check'})

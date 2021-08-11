@@ -1,0 +1,13 @@
+extends base/_layout
+block head
+    title Спасибо!
+block page
+    section.section-thanks
+        .section-thanks__wrapper
+            .container
+                .section-thanks__inner
+                    h2.section-thanks__title Спасибо!
+                    .section-thanks__subtitle Ваша заявка принята, наш менеджер <br>свяжется с вами.
+                    .section-thanks__btn
+                        a(href='./index.html').input-submit Вернуться назад
+    include sections/popup

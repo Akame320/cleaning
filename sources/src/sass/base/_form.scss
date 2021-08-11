@@ -64,6 +64,14 @@
 
   transition: all 0.05s linear;
 
+  &.no-valid{
+    border-color: red;
+  }
+
+  &-yes-valid{
+    border-color: #4caf50;
+  }
+
   width: 100%;
 
   @media screen and (max-width: $mobile-screen) {

@@ -4,6 +4,8 @@ $(function () {
         $('.menu-list').slideToggle(250);
     })
 
+    $('input[name="tel"]').mask("+7 (999) 999-99-99", {placeholder: '+7 (xxx) xxx-xx-xx'})
+
     $('.section-calculate__area-range').rangeslider({
         polyfill: false,
         rangeClass: 'section-calculate__area-range',
@@ -18,6 +20,7 @@ $(function () {
         },
         onSlide: function (position, value) {
             this.output.html(value);
+            $('#range-1').val(value);
             $('.range-output').css({
                 left: position
             })
@@ -59,7 +62,9 @@ $(function () {
                 settings: {
                     slidesToScroll: 1,
                     slidesToShow: 1,
-                    centerMode: false
+                    centerMode: false,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
                 }
             }
         ]
@@ -75,11 +80,24 @@ $(function () {
                 breakpoint: 1023,
                 settings: {
                     centerPadding: '0rem',
-                }
+                },
             },
+            {
+                breakpoint: 900,
+                settings: {
+                    centerPadding: '0rem',
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                }
+            }
         ]
     })
 
+    $('.set-attr-popup').on('click', function (){
+       let str = $(this).attr('data-set-attr-popup');
+       $('.set-attr-val').attr('value', str);
+       $('.popup-open-form').addClass('active');
+    });
 
 
     $('.section-services-more__slider').slick({
@@ -96,6 +114,13 @@ $(function () {
                 }
             },
             {
+                breakpoint: 900,
+                settings: {
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                }
+            },
+            {
                 breakpoint: 767,
                 settings: {
                     centerPadding: "8rem"
@@ -107,8 +132,6 @@ $(function () {
         if($(this).hasClass('active')){
             $('.section-questions__item-header').removeClass('active');
             $('.section-questions__item-body').slideUp(250);
-
-            console.log($(this).has('active'))
         }else{
             $('.section-questions__item-header').removeClass('active');
             $('.section-questions__item-body').slideUp(250);
@@ -131,8 +154,6 @@ $(function () {
     $('[data-popup]').on('click', function () {
         let str = $(this).attr('data-popup');
 
-        console.log(str)
-
         $(`#${str}`).addClass('active');
     });
 
@@ -143,6 +164,7 @@ $(function () {
 
     $('.open-popup-form').on('click', function () {
         $('.popup-open-form').addClass('active');
+        $('.set-attr-val').attr('value', 'Форма из "заказать звонок"');
     });
 
     // if($(window))
@@ -155,6 +177,54 @@ $(function () {
             $('.menu-list').slideUp(250);
         }
     })
+
+    if($(window).innerWidth() < 767){
+        $('.section-team__data').slick({
+            slidesToScroll: 1,
+            slidesToShow: 1,
+            prevArrow: $('button.section-team__arrow.arrow-prev'),
+            nextArrow: $('button.section-team__arrow.arrow-next'),
+            responsive: [
+                {
+                    breakpoint: 900,
+                    settings: {
+                        autoplay: true,
+                        autoplaySpeed: 2000,
+                    }
+                },
+            ]
+        })
+
+        $('.section-equipment__data').slick({
+            slidesToScroll: 1,
+            slidesToShow: 1,
+            adaptiveHeight: true,
+            prevArrow: $('button.section-equipment__arrow.arrow-prev'),
+            nextArrow: $('button.section-equipment__arrow.arrow-next'),
+            responsive: [
+                {
+                    breakpoint: 900,
+                    settings: {
+                        autoplay: true,
+                        autoplaySpeed: 2000,
+                    }
+                },
+            ]
+        })
+    }
+
+    function clickNotElement(elem, callback, e) {
+        if (!elem.is(e.target) && elem.has(e.target).length === 0) {
+            callback();
+        }
+    }
+
+    $(document).mouseup(function (e) {
+        clickNotElement($('.popup-services-0__inner'), function () {
+            $('.popup-services-0').removeClass('active');
+        }, e);
+    });
+
 })
 
 
@@ -180,7 +250,7 @@ $(".ajax-submit").click(function (e) {
     if (formValid) {
         // создаем скрытые поля для utm внутрии формы
         if (Object.keys(utms).length === 0) {
-            utms['utm_source'] = "https://createro.ru/";
+            utms['utm_source'] = "https://clean.dstrade.kz/ru/";
         }
     } else {
         e.preventDefault();
@@ -209,20 +279,23 @@ $(".form-submit").on("submit", function (event) {
         str = str.split("+").join("");
         str = str.split(" ").join("");
 
-        if (str.length != 11) {
-            $(this).find("input[name='tel']").removeClass("yes-valid")
-            $(this).find("input[name='tel']").next('.input-text-p').removeClass('yes-valid')
-            $(this).find("input[name='tel']").addClass("no-valid");
-            $(this).find("input[name='tel']").next('.input-text-p').addClass('no-valid')
-            valid = false;
-        } else {
-            $(this).find("input[name='tel']").removeClass("no-valid")
-            $(this).find("input[name='tel']").next('.input-text-p').removeClass('no-valid')
-            $(this).find("input[name='tel']").addClass("yes-valid");
-            $(this).find("input[name='tel']").next('.input-text-p').addClass('yes-valid')
-        }
+        if (str.length != 11 && str.length != 1) {
+            if (str.length != 11 && str.length != 1) {
+                $(this).find("input[name='tel']").removeClass("yes-valid")
+                $(this).find("input[name='tel']").next('.input-text-p').removeClass('yes-valid')
+                $(this).find("input[name='tel']").addClass("no-valid");
+                $(this).find("input[name='tel']").next('.input-text-p').addClass('no-valid')
+                valid = false;
+            } else {
+                $(this).find("input[name='tel']").removeClass("no-valid")
+                $(this).find("input[name='tel']").next('.input-text-p').removeClass('no-valid')
+                $(this).find("input[name='tel']").addClass("yes-valid");
+                $(this).find("input[name='tel']").next('.input-text-p').addClass('yes-valid')
+            }
 
+        }
     }
+
 
     if (form.has("email")) {
         var str = form.get("email");
@@ -279,26 +352,22 @@ $(".form-submit").on("submit", function (event) {
             form.append("utms", outUtms);
         }
 
-        console.log(form.get('tel'))
-        console.log(form.get('name'))
-        console.log(form.get('email'))
 
         const xml = new XMLHttpRequest();
-        xml.open("POST", "../php/form.php");
+        xml.open("POST", "../ru/php/form.php");
         xml.send(form);
 
         xml.onload = () => {
             if (xml.status != 200) {
-                $('#popup-error').addClass('active')
-                console.log(xml.status)
+                $('#popup-error').addClass('active');
             } else {
-                $('#popup-yes').addClass('active')
-                $(this).find("input[type='text']").val("")
-                console.log(xml.status)
+                window.open('../ru/thanks.html');
+                $(this).find("input[type='text']").val("");
             }
         }
     }
 })
+
 
 setTimeout(function(){
     var elem = document.createElement('script');
